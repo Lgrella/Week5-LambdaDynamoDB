@@ -30,7 +30,7 @@ The SAM cli provides some automation as it relates to the creation of a lambda f
 To start the SAM process, run sam init in your terminal.
 Choose AWS quickstart and the dynamoDB template. 
 
-![image1](img/SAMinit.png)
+![image1](img/saminit.png)
 
 At this point, update the template main.rs code however you like. My application just includes the "C" of CRUD database commands.
 
@@ -39,10 +39,11 @@ Run sam build and sam deploy -guided to deploy the application.
 I chose the following options for the guided parameters.
 
 ![image2](img/guided.png)
+![image22](img/generated.png)
 
 Once you deploy, the SAM CLI will provide the following information.
 
-![image3](img/deployed.png)
+![image3](img/deployed2.png)
 
 As you can see, the SAM CLI created the following (order matters): 
 * Dynamo DB Table
@@ -63,13 +64,28 @@ To test, I used the link from the API Gateway line of the outputs. Knowing this 
 
 ## AWS Console
 
-Below are screenshots from the AWS Console of the lambda function.
+Below are screenshots from the AWS Console.
 
-![image6](img/dynamoDBtable.png)
-![image7](img/dynamoDBrecord.png)
-![image8](img/apigateway.png)
-![image9](img/lambdafn.png)
-![image10](img/cloudfrmtn.png)
+### Lambda Function
+![image9](img/lambda1.png)
+![image9](img/lambdatrigger.png)
+
+### API Gateway
+![image8](img/restapi.png)
+![image8](img/restapi1.png)
+![image8](img/restapi2.png)
+
+### Cloudwatch
+![image6](img/cloudwatch1.png)
+![image6](img/cloudwatchlog.png)
+
+### DynamoDB
+
+![image6](img/dynamodb1.png)
+![image6](img/dynamodb2.png)
+![image6](img/dynamodb3.png)
+
+Note the 123 here is what was added when using postman to confirm the app is working.
 
 ## References
 * [rust-cli-template](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification.html)
